@@ -1,0 +1,73 @@
+body {
+    background-color: #292929;
+    display: flex;
+    flex-direction: column; /* selectbox'ýn aþaðýya gelmesi için */
+    align-items: center;
+    justify-content: center; /*bu ve üstteki satýr elemanlarý sayfanýn ortasýna taþýr*/
+    height: 100vh; /*içeriði yatay ve dikey olarak tam ortaya alýr (body'nin tamamýný kullanýr)*/
+    margin: 0;
+    color: #fff;
+}
+
+.seat {
+    background-color: #444451;
+    height: 15px;
+    width: 15px;
+    margin: 3px;
+    border-radius: 5px;
+}
+
+    .seat.selected { /*koltuk seçildiðinde sarýmsý bir renge dönüþmesi için arka plan renginin stilini verdik*/
+        background-color: #f6eb6f;
+    }
+
+    .seat.reserved { /* daha önceden ayýrtýlmýþ yerlerin arka plan rengini verdik */
+        background-color: #fff;
+    }
+
+    .seat:not(.reserved):hover{ /* önceden ayrýlmýþ olan elemanlar hariç diðer koltuklarýn üstüne gelince büyür */
+        cursor: pointer;
+        transform: scale(1.3);
+    }
+
+    .seat:nth-of-type(2) { /* 2. elemandan sonra margin deeri verdik boþluk oluþmasý için */
+        margin-right: 20px;
+    }
+
+    .seat:nth-last-of-type(3) /* sondan 3. elemandan sonra margin deðeri verdik */ {
+        margin-right: 20px;
+    }
+
+.row {
+    display: flex; /*satýr elemanlarýný yan yana getirir*/
+}
+
+.screen {
+    background-color: #fff;
+    height: 50px;
+    width: 100%;
+    margin: 20px 0;
+    box-shadow: 0 3px 8px rgba(255,255,255,0.7); /* eklediðimiz beyaz ekrana gölgelendirme yaptýk */
+}
+
+movie-list {
+    margin: 20px 0;
+}
+
+.info{
+    background-color: rgba(0,0,0,0.2);
+    padding: 5px 10px; /* 5px--> üstten alttan padding  10px--> saðdan soldan padding */
+    color: #777;
+    display: flex; /* info classýný kullanan öðelerin yan yana gelmesi için */
+}
+
+.info li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px; /* üstten alttan 0 px, saðdan soldan 10px boþluk */
+}
+
+p.text span{
+    color:#f6eb6f;
+}
